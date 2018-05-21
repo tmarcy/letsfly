@@ -1,0 +1,29 @@
+{% extends "default.html" %}
+
+{% block title %}homepage{% endblock %}
+
+{% block content %}
+    {% if session['user'] %}
+    <h1>Hello </h1>
+    <h1>{{session['user']}}!</h1>
+     <a href="/logout">Logout</a>
+    {% endif %}
+    <h1>Welcome to LetsFly!</h1>
+    <h2>Choose one of the following links:</h2>
+    {% if handlers %}
+        <ul>
+            {% for h in handlers %}
+            <li><a href={{h[1]}}>{{h[0]}}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if not session['user'] %}
+     <form>
+     <fieldset>
+         <h4>Would you like to login?</h4>
+         <a href="/login">Login</a>
+     </fieldset>
+    </form>
+  {% endif %}
+{% endblock %}

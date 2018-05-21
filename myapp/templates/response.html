@@ -1,0 +1,15 @@
+{% extends "default.html" %}
+
+{% block title %}AirportInfo{% endblock %}
+{% block content %}
+    <h2>{{city}} airports info</h2>
+    <ol>
+        {% for each in listinfo %}
+        <li><h4><b>{{each['name']}}</b></h4>
+            <h4><mark>{{each['code']}}</mark></h4>
+                <h4>{{each['time zone info']}}</h4> </li><br>
+        {% endfor %}
+
+    </ol>
+
+{% endblock %}

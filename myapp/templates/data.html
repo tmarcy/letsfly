@@ -1,0 +1,20 @@
+{% extends "default.html" %}
+
+{% block title %}search{% endblock %}
+
+{% block content %}
+    <h2>Insert the city name below:</h2>
+
+    <form method="post" action="/search">
+        {{form.csrf_token}}
+        <div>{{form.city.label}}:{{form.city}}</div>
+        {% if form.city.errors %}
+        <ul class="error">
+            {% for e in form.city.errors %}
+            <li>{{e}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div>{{form.submit}}</div>
+    </form>
+{% endblock %}

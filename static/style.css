@@ -1,0 +1,17 @@
+h1{
+    color: #440dff;
+}
+h2{
+    color: cornflowerblue;
+}
+h3{
+    color: cadetblue;
+}
+mark {
+    background-color: cyan;
+    color: black;
+}
+
+fieldset {
+    width: 20%;
+}

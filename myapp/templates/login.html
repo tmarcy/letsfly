@@ -1,0 +1,27 @@
+{% extends "default.html" %}
+
+{% block title %}homepage{% endblock %}
+
+{% block content %}
+    <h1>Login</h1>
+    <h2>Insert your credentials below:</h2>
+
+    <form method="post" action="/login">
+        {{form.csrf_token}}
+        <div class="form-group  required">
+        <label class="control-label" for="username">Username</label><br>
+        {{ form.username(class="form-control",id="username",required="required",type="text",value="",placeholder="Enter email") }}
+        </div>
+        <div class="form-group  required">
+        <label class="control-label" for="password">Password</label><br>
+        {{ form.password(class="form-control",id="password",required="required",type="password",value="",placeholder="Enter password") }}
+         </div> <br>
+         <div class="form-group  required">
+        {{ form.remember_me(class="form-control",id="remember_me",required="required") }}
+             <label class="control-label" for="remember_me">Remember me</label>
+         </div>
+
+         {{ form.submit(class="btn btn-success btn-block") }}
+
+    </form>
+{% endblock %}
